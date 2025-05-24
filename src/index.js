@@ -22,7 +22,7 @@ buttons.forEach((button) => {
  // Renders home page on load event.
 window.addEventListener("load", () => {
     homeBtn.classList.add("underline");
-    renderMenu();
+    renderHome();
 })
 // Changes module on click based on their data-class.
 homeBtn.addEventListener("click", () => {
