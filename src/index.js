@@ -1,17 +1,38 @@
-const button = document.querySelectorAll("button");
-const main = document.querySelector("main");
-
 import "modern-css-reset";
 import "normalize.css";
 import "./styles.css";
-import mainPage from "./home.js";
+import renderHome from "./home.js";
+import renderAbout from "./about.js";
+import renderMenu from "./menu.js";
 
+const homeBtn = document.querySelector('button[data-class="home"]');
+const aboutBtn = document.querySelector('button[data-class="about"]');
+const menuBtn = document.querySelector('button[data-class="menu"]');
+const buttons = document.querySelectorAll("button");
 
-button.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        import(`./${btn.dataset.class}`); // Imports module based on their data-class
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        for (const button of buttons) {
+            button.classList.remove("underline");
+        }
+        button.classList.add("underline");
     });
-})
+});
 
-// TODO: Need to implement function to reset inner html of main section, and then replace it.
+ // Renders home page on load event.
+window.addEventListener("load", () => {
+    homeBtn.classList.add("underline");
+    renderMenu();
+})
+// Changes module on click based on their data-class.
+homeBtn.addEventListener("click", () => {
+    renderHome();
+});
+aboutBtn.addEventListener("click", () => {
+    renderAbout();
+});
+menuBtn.addEventListener("click", () => {
+    renderMenu();
+});
+
 

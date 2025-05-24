@@ -1,13 +1,14 @@
 import imgOne from "./assets/imgOne.png";
 import imgTwo from "./assets/imgTwo.png";
 
-export default (function() {
+export default function renderHome() {
 /* In here i will edit main page of the restaurant webpage. */
 const main = document.querySelector("main"); // Main content DOM elements.
+// Resets previous modules.
+main.innerHTML = ` `;
 // Creating main content elements.
 const about = document.createElement("h1");
 about.textContent = "About us";
-// about.style.fontSize = "3rem";
 
 // Div which will hold 4 grid items inside of it.
 const gridContainer = document.createElement("div");
@@ -83,4 +84,4 @@ main.appendChild(about);
 main.appendChild(gridContainer);
 createGridItems();
 
-})();
+};
