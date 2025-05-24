@@ -1,12 +1,5 @@
 export default (function() {
-    /* This will be entry point for all files of this project and in here i will
-edit index page of the restaurant webpage. */
-
-const header = document.querySelector("header"); // Header DOM elements.
-// Creating header elements.
-const logoContainer = document.createElement("div");
-logoContainer.innerHTML = `<p>Restaurant <span id="bold">LATGALE</span></p>`;
-
+/* In here i will edit main page of the restaurant webpage. */
 const main = document.querySelector("main"); // Main content DOM elements.
 // Creating main content elements.
 const about = document.createElement("h1");
@@ -57,18 +50,10 @@ function createGridItems() {
     }
 }
 
-// Footer section of page.
-const footer = document.querySelector("footer");
-footer.innerHTML = `<p>Want to work together? Contact me via the information below:</p>
-                    <address>
-                        <a>roodang@gasjmjas.com</a><br />
-                        <a>(316).555.2398 </a>
-                    </address>`;
-
-header.insertBefore(logoContainer, header.firstChild);
 main.appendChild(about);
 main.appendChild(gridContainer);
 createGridItems();
+
 })();
 
 import imgOne from "./assets/imgOne.png";
