@@ -1,4 +1,4 @@
-import "normalize.css";
 import "modern-css-reset";
+import "normalize.css";
 import "./styles.css";
-import mainPage from "./main-page.js";
+import "./main-page.js";

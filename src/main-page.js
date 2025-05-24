@@ -26,17 +26,19 @@ function createGridItems() {
         // Adds different content to different grid item, based on their id.
         if (i === 0) {
             gridItem.textContent = `Nestled in the heart of a quiet village, this old Latgalian restaurant preserves the essence of regional 
-                                    hospitality and culinary tradition. The building itself, with its timbered walls and thatched roof, speaks 
-                                    to centuries of local craftsmanship. Inside, the scent of rye bread, smoked pork, and forest mushrooms 
-                                    welcomes guests like an old friend. Every dish served is a reflection of ancestral recipes passed down 
+                                    hospitality and culinary tradition. Every dish served is a reflection of ancestral recipes passed down 
                                     through generations. Here, time slows down, and each meal becomes a story told with firewood, clay pots, 
                                     and wild herbs. This is more than a restaurant—it’s a living memory of Latgale’s soul.`;
         }
+        else if (i === 1) {
+            gridItem.innerHTML = `<img src="${imgOne}" alt="A village restaurant in old Latgalian style with traditional wooden building.">`
+        }
+        else if (i === 2) {
+            gridItem.innerHTML = `<img src="${imgTwo}" alt="A group of restaurant staff and possibly the owner stand together in front of a rustic wooden building with a thatched roof. The building has a sign above the entrance that reads RESTAURĀNS. The staff wear simple linen clothing and aprons, standing or sitting in a relaxed and proud pose. The setting conveys a warm, welcoming, and traditional atmosphere in a rural village environment." />`
+        }
         else if (i === 3) {
             gridItem.textContent = `The inspiration to open this restaurant came from childhood memories spent in my grandmother’s kitchen,
-                                    where the scent of freshly baked bread and simmering stews filled the air. I wanted to recreate the warmth
-                                    and simplicity of those meals, where everything was made by hand and nothing was rushed. Seeing how much
-                                    tradition was being lost over time, I felt a strong urge to preserve the flavors and stories of old Latgale. 
+                                    where the scent of freshly baked bread and simmering stews filled the air. 
                                     Each dish here is a tribute to the people who lived close to the land and cooked with heart. This place is 
                                     my way of keeping those roots alive and sharing them with others.`;
         }
@@ -57,9 +59,17 @@ function createGridItems() {
 
 // Footer section of page.
 const footer = document.querySelector("footer");
+footer.innerHTML = `<p>Want to work together? Contact me via the information below:</p>
+                    <address>
+                        <a>roodang@gasjmjas.com</a><br />
+                        <a>(316).555.2398 </a>
+                    </address>`;
 
 header.insertBefore(logoContainer, header.firstChild);
 main.appendChild(about);
 main.appendChild(gridContainer);
 createGridItems();
 })();
+
+import imgOne from "./assets/imgOne.png";
+import imgTwo from "./assets/imgTwo.png";
