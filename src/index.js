@@ -7,14 +7,19 @@ import renderMenu from "./menu.js";
 
 const homeBtn = document.querySelector('button[data-class="home"]');
 const aboutBtn = document.querySelector('button[data-class="about"]');
-const menuBtn = document.querySelector('button[data-class="menu"]');
 const buttons = document.querySelectorAll("button");
 
+
 buttons.forEach((button) => {
+    // Changes module on click based on their data-class.
+    // Underlines clicked button and removes underline from other buttons.
     button.addEventListener("click", () => {
         for (const button of buttons) {
             button.classList.remove("underline");
         }
+        if (button === homeBtn)renderHome();
+        else if (button === aboutBtn) renderAbout(); 
+        else renderMenu();
         button.classList.add("underline");
     });
 });
@@ -24,15 +29,5 @@ window.addEventListener("load", () => {
     homeBtn.classList.add("underline");
     renderHome();
 })
-// Changes module on click based on their data-class.
-homeBtn.addEventListener("click", () => {
-    renderHome();
-});
-aboutBtn.addEventListener("click", () => {
-    renderAbout();
-});
-menuBtn.addEventListener("click", () => {
-    renderMenu();
-});
 
 

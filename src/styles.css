@@ -66,7 +66,7 @@ h1 {
 }
 
 main {
-    max-width: 65vw;
+    max-width: clamp(700px, 65vw, 1200px);
     min-width: 880px;
     border-radius: 10px;
     margin: auto;
@@ -78,10 +78,10 @@ main {
 }
 
 /* About page css rules */
-#map {
+.map {
     border-radius: 25px;
     opacity: 0.8;
-    width: 55vw;
+    width: 45vw;
     margin: auto;
 }
 
@@ -152,7 +152,7 @@ form button {
 }
 
 .grid-container > div:first-of-type, .grid-container > div:nth-child(4), .grid-container > div:last-child {
-    font-size: clamp(1.2rem, 1.7vw, 3rem);
+    font-size: clamp(1.2rem, 1.4vw, 2rem);
     text-align: center;
 }
 .grid-container > div:nth-of-type(5) > ul > li {
@@ -177,4 +177,42 @@ footer > p {
 footer > address > a {
     font-size: 1.2rem;
     color: white;
+}
+
+/* Menu main section grid settings */
+.menu-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.menu-grid-container > div > img {
+    max-height: 600px;
+    margin-right: 0px;
+}
+.menu-grid-container > div:nth-of-type(2),.menu-grid-container > div:nth-of-type(3) , .menu-grid-container > div:nth-of-type(6) {
+    display: flex;
+    justify-content: end;
+}
+.menu-grid-container > div:nth-of-type(2) > img, .menu-grid-container > div:nth-of-type(6) > img {
+    border-radius: 40% 0 0 40%;
+}
+.menu-grid-container > div:nth-of-type(3) > img {
+    border-radius: 0 40% 40% 0;
+}
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.6rem, 2.5vh, 2.5rem);
+
+    text-align: center;
+    font-size: clamp(1.2rem, 1.5vw, 2rem);
+}
+.food {
+    border-bottom: 3px solid;
+}
+.price {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: clamp(1.6rem, 2.3vw, 3.2rem);
+    border-bottom: 2px solid;
 }

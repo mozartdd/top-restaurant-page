@@ -5,6 +5,7 @@ export default function renderAbout() {
     main.innerHTML = "";
 
     const img = document.createElement("img");
+    img.classList.add("map");
     img.src = mapImg;
     img.alt = "Map of area where to find restaurant";
 
@@ -21,7 +22,7 @@ export default function renderAbout() {
         <label for="email">Email: </label>
         <input id="email" name="guest-email" type="email">
         <label for="info">Additional information: </label>
-        <textarea id="info" name="additional-info" placeholder="E.g how many guests"></textarea>
+        <textarea rows="4" id="info" name="additional-info" placeholder="E.g how many guests"></textarea>
         <button type="submit">Submit</button>
     `;
 
